@@ -1,0 +1,32 @@
+.commonHost: &commonHost
+  phpfpm_cachetool: '/var/run/php/php8.3-fpm.sock'
+  ssh_arguments:
+    - '-o ProxyJump=deploy-jumphost'
+
+# Paths and hostnames are placeholders
+hosts:
+  kickstarter.testphp83:
+    <<: *commonHost
+    hostname: 217.91.35.16
+    remote_user: www-data-deploy
+    port: 20040
+    deploy_path: /var/www/kickerstarter.testphp83
+    labels:
+      stage: testing
+
+  kickerstarter.w7.leuchtfeuer.com:
+    <<: *commonHost
+    hostname: 172.17.0.21
+    remote_user: webXXdeploy
+    deploy_path: /var/www/kickerstarter.w7.leuchtfeuer.com
+    labels:
+      stage: staging
+    phpfpm_cachetool: '/var/run/php/php8.3-fpm.web09.sock'
+
+  kickstarter:
+    <<: *commonHost
+    hostname: X.X.X.X
+    remote_user: www-data-deploy
+    deploy_path: /var/www/kickstarter
+    labels:
+      stage: production

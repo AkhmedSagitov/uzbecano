@@ -1,0 +1,14 @@
+base: 'https://kickstarter.ddev.site/'
+dependencies:
+  - leuchtfeuer/site-package
+languages:
+  -
+    title: English
+    enabled: true
+    languageId: 0
+    base: /
+    locale: en_GB.utf8
+    navigationTitle: English
+    flag: us
+rootPageId: 1
+websiteTitle: ''

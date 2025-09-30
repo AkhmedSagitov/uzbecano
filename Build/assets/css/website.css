@@ -1,0 +1,32 @@
+@import "@fontsource-variable/roboto/index.css";
+
+@import "tailwindcss" source("../../../packages");
+@source "../typescript";
+
+@plugin "@tailwindcss/typography";
+
+@theme {
+  /* Generated with https://www.tints.dev/primary/F24030 */
+  --color-primary-50: #feedec;
+  --color-primary-100: #fcd7d4;
+  --color-primary-200: #fab4ad;
+  --color-primary-300: #f78c82;
+  --color-primary-400: #f5695c;
+  --color-primary-500: #f24030;
+  --color-primary-600: #dd1f0e;
+  --color-primary-700: #a3170a;
+  --color-primary-800: #6e1007;
+  --color-primary-900: #350703;
+  --color-primary-950: #1d0402;
+
+  --font-sans: 'Roboto Variable', sans-serif;
+}
+
+@layer utilities {
+  .prose {
+    @apply prose-lead:font-normal;
+    @apply prose-a:text-primary-500 prose-a:hover:text-primary-600;
+
+    --tw-prose-invert-lead: #fff;
+  }
+}

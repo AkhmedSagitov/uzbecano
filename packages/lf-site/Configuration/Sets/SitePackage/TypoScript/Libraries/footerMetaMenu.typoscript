@@ -1,0 +1,7 @@
+lib.footerMetaMenu = menu
+lib.footerMetaMenu {
+    levels = 1
+    as = footerMetaMenu
+    special = directory
+    special.value = {$lfSite.pages.footerMeta}
+}

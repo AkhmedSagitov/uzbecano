@@ -1,0 +1,52 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<nav class="relative" data-main-menu>
+    <button class="block" data-main-menu-open="wrapper">
+        <f:render partial="Icon" arguments="{icon: 'bars-solid', class: 'fill-current size-8'}" />
+    </button>
+    <div data-main-menu-layer="wrapper" class="fixed inset-0 z-50 bg-white translate-x-full transition-transform duration-300 [&.is-active]:translate-x-0">
+        <button class="z-10 absolute top-4 right-4" data-main-menu-close="wrapper">
+            <f:render partial="Icon" arguments="{icon: 'xmark-solid', class: 'fill-current size-8'}" />
+        </button>
+        <ul class="mt-16 border-t border-t-neutral-200 max-h-[calc(100dvh-var(--spacing)*16)] overflow-auto">
+            <f:for each="{mainMenu}" as="page">
+                <f:render section="Submenu" arguments="{page: page}" />
+            </f:for>
+        </ul>
+    </div>
+</nav>
+
+<f:section name="Submenu">
+    <li class="">
+        <f:if condition="{page.children}">
+            <f:then>
+                <button class="flex items-center w-full justify-between gap-2 p-4 border-b border-b-neutral-200" data-main-menu-open="{page.data.uid}">
+                    <span>{page.title}</span>
+                    <f:render partial="Icon" arguments="{icon: 'chevron-right-solid', class: 'fill-current size-4'}" />
+                </button>
+                <div data-main-menu-layer="{page.data.uid}" class="absolute inset-0 bg-white translate-x-full transition-transform duration-300 [&.is-active]:translate-x-0">
+                    <button class="flex items-center w-[calc(100%-var(--spacing)*16)] gap-2 mt-2 p-4" data-main-menu-close="{page.data.uid}">
+                        <f:render partial="Icon" arguments="{icon: 'chevron-right-solid', class: 'fill-current size-4 rotate-180'}" />
+                        <span>Back</span>
+                    </button>
+                    <div class="overflow-auto max-h-[calc(100dvh-var(--spacing)*16)] border-t border-t-neutral-200">
+                        <f:link.page pageUid="{page.data.uid}" class="block px-4 py-4 border-b border-b-neutral-200 font-bold text-xl">
+                            {page.title}
+                        </f:link.page>
+                        <ul>
+                            <f:for each="{page.children}" as="subpage">
+                                <f:render section="Submenu" arguments="{page: subpage}" />
+                            </f:for>
+                        </ul>
+                    </div>
+                </div>
+            </f:then>
+            <f:else>
+                <f:link.page pageUid="{page.data.uid}" class="block p-4 border-b border-b-neutral-200">
+                    {page.title}
+                </f:link.page>
+            </f:else>
+        </f:if>
+    </li>
+</f:section>

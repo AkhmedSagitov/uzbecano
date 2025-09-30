@@ -1,0 +1,22 @@
+name: Reverse Deployment
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.head_ref || github.workflow }}
+
+jobs:
+  reverse-deploy:
+    name: Reverse Deployment
+    uses: Leuchtfeuer/deployment-runner/.github/workflows/reverse.yaml@v3.4
+    with:
+      phpVersion: '8.3'
+      retentionDays: 60
+      runner: ${{ vars.RUNNER }}
+      stage: 'production'
+    secrets:
+      PRIVATE_KEY: ${{ secrets.JENKINS_PRIVATE_KEY }}
+      PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+      KNOWN_HOSTS: ${{ vars.KNOWN_HOSTS }}
+      KNOWN_HOSTS_COMMON: ${{ vars.KNOWN_HOSTS_COMMON }}

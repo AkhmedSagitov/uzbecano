@@ -1,0 +1,13 @@
+tables:
+  fe_users:
+    columns:
+      username: user_name
+      name: name
+      first_name: first_name
+      last_name: last_name
+      middle_name: ( '' )
+      email: email
+      company: company
+      zip: postcode
+      city: city
+locale: de_DE

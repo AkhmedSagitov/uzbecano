@@ -1,0 +1,16 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<footer class="py-6 bg-white border-t border-t-neutral-200">
+    <div class="container mx-auto px-6">
+        <ul class="flex gap-6 flex-wrap">
+            <f:for each="{footerMetaMenu}" as="page">
+                <li>
+                    <f:link.page pageUid="{page.data.uid}" class="text-sm text-neutral-500 transition-colors hover:text-primary-500 focus-visible:text-primary-500">
+                        {page.title}
+                    </f:link.page>
+                </li>
+            </f:for>
+        </ul>
+    </div>
+</footer>

@@ -1,0 +1,35 @@
+@import './TypoScript/Libraries/*'
+
+page = PAGE
+page {
+    bodyTagCObject = TEXT
+    bodyTagCObject.value {
+        field = uid
+        wrap = <body id="page-|">
+    }
+
+    config {
+        headerComment (
+###################################################
+Leuchtfeuer Digital Marketing - www.Leuchtfeuer.com
+###################################################
+        )
+    }
+
+    meta {
+        viewport = width=device-width, initial-scale=1.0
+    }
+
+    10 = PAGEVIEW
+    10 {
+        paths {
+            0 = EXT:lf_site/Resources/Private/Common/
+            10 = EXT:lf_site/Resources/Private/PageView/
+        }
+        dataProcessing {
+            10 = page-content
+            20 < lib.mainMenu
+            30 < lib.footerMetaMenu
+        }
+    }
+}

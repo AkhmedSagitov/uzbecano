@@ -1,0 +1,107 @@
+#!/usr/bin/env bash
+
+# Scheduler interval in minutes
+SCHEDULER_INTERVAL=5
+
+# Find currently used PHP version path, see .ddev/config.yaml:php_version
+PHP=$(command -v "php" || echo "")
+
+FORCE=0
+RUN_CRON=0
+
+for i in "$@"; do
+    case $i in
+        start)
+            supervisorctl start webextradaemons:typo3-scheduler
+            shift
+            exit 0
+            ;;
+        stop)
+            supervisorctl stop webextradaemons:typo3-scheduler
+            shift
+            exit 0
+            ;;
+        status)
+            supervisorctl status webextradaemons:typo3-scheduler
+            shift
+            exit 0
+            ;;
+        -f|--force)
+            FORCE=1
+            shift
+            ;;
+        -c|--cron)
+            RUN_CRON=1
+            shift
+            ;;
+        -h|--help)
+            echo "A simple wrapper script to trigger the scheduler script with additional options:"
+            echo "  * -f|--force        : Run the scheduler even though xdebug is enabled."
+            echo "  * -c|--cron         : Run the scheduler every 5 minutes (Cron-like but in foreground)."
+            echo "  * start/stop/status : Control the background service."
+            exit 0
+            ;;
+    esac
+done
+
+echoLine() {
+    echo "[$(date)] $1"
+}
+
+runScheduler() {
+    # Skip scheduler if xdebug is enabled
+    if [ "$($PHP -m | grep xdebug)" ] && [ "$FORCE" = 0 ]; then
+        echoLine "XDebug is enabled, not running scheduler"
+        if [ $RUN_CRON -gt 0 ]; then
+            return
+        else
+            exit 0
+        fi
+    fi
+
+    # Detect TYPO3 cli path
+    binDir=$(jq '.config["bin-dir"] // empty' -r composer.json)
+    if [ -z "$binDir" ]; then
+        schedulerBin="$DDEV_APPROOT/vendor/bin/typo3"
+    else
+        schedulerBin="$DDEV_APPROOT/$binDir/typo3"
+    fi
+
+    if [ ! -f "$schedulerBin" ]; then
+        echoLine "The TYPO3 cli $schedulerBin does not exist. Try 'ddev composer install' to fix this issue."
+    fi
+
+    # Run the TYPO3 scheduler command
+    "$schedulerBin" scheduler:run -vv
+    status=$(echo $?)
+    if [ $status -gt 0 ]; then
+        echoLine "Failed to run scheduler..."
+        exit $status
+    else
+        echoLine "Scheduler run finished successfully..."
+    fi
+}
+
+# Wait for supervisor to be ready, so the task will run right
+# after typo3-init has finished
+until supervisorctl status &>/dev/null; do
+    sleep 5
+done
+
+if [ $RUN_CRON -gt 0 ]; then
+    while true; do
+        runScheduler
+
+        # Get current time in seconds since epoch
+        now=$(date +%s)
+
+        # Round down to the nearest interval
+        next=$(( (now / 60 / SCHEDULER_INTERVAL + 1) * SCHEDULER_INTERVAL * 60 ))
+
+        # Wait until the next aligned interval
+        sleep_seconds=$((next - now))
+        sleep "$sleep_seconds"
+    done
+else
+    runScheduler
+fi

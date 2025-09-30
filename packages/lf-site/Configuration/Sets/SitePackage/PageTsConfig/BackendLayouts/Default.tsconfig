@@ -1,0 +1,23 @@
+mod.web_layout.BackendLayouts {
+    Default {
+        title = Default
+        icon = EXT:lf_site/Resources/Public/Icons/BackendLayouts/default.svg
+        config {
+            backend_layout {
+                colCount = 1
+                rowCount = 1
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Main Content
+                                colPos = 0
+                                identifier = main
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,42 @@
+{
+	"name": "kickstarter-assets",
+	"private": true,
+	"version": "1.0.0",
+	"author": "Team YD <dev@Leuchtfeuer.com>",
+	"type": "module",
+	"scripts": {
+		"eslint:check": "tsc && npx eslint",
+		"eslint:fix": "tsc && npx eslint --fix",
+		"build": "npx update-browserslist-db@latest && npm run eslint:check && tsx scripts/build-assets.ts",
+		"watch": "npx update-browserslist-db@latest && npm run eslint:check && npx eslint && tsx scripts/build-assets.ts --watch"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.28.0",
+		"@stylistic/eslint-plugin": "^4.4.1",
+		"@tailwindcss/vite": "^4.1.8",
+		"@types/node": "^22.15.29",
+		"@typescript-eslint/parser": "^8.33.1",
+		"autoprefixer": "^10.4.21",
+		"eslint": "^9.28.0",
+		"globals": "^16.2.0",
+		"postcss": "^8.5.4",
+		"sass": "^1.89.1",
+		"svgo": "^3.3.2",
+		"svgstore": "^3.0.1",
+		"tsx": "^4.7.0",
+		"typescript": "~5.8.3",
+		"typescript-eslint": "^8.33.1",
+		"vite": "^6.3.5"
+	},
+	"dependencies": {
+		"@fontsource-variable/roboto": "^5.2.5",
+		"@tailwindcss/typography": "^0.5.16",
+		"tailwindcss": "^4.1.8"
+	},
+	"browserslist": [
+		"last 2 versions",
+		"> 1%",
+		"not IE 11",
+		"not dead"
+	]
+}

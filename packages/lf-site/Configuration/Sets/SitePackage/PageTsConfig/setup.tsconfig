@@ -1,0 +1,17 @@
+# Kickstarter
+mod {
+    web_layout {
+        defLangBinding = 1
+    }
+}
+
+
+[1 in tree.rootLineIds]
+    TCEMAIN {
+        permissions {
+            # Group: [ACCESS] Basic
+            groupid = 1
+        }
+    }
+[global]
+

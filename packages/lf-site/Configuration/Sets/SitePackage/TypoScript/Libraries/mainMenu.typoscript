@@ -1,0 +1,5 @@
+lib.mainMenu = menu
+lib.mainMenu {
+    levels = 4
+    as = mainMenu
+}

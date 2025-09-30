@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+## Description: Creates setup-db.sql.gz from current database
+## Usage: create-setup-db-file
+## Example: "ddev create-setup-db-file"
+
+echo "===================================================================="
+echo "Preparations"
+echo "===================================================================="
+
+typo3 cleanup:deletedrecords
+
+echo "===================================================================="
+echo "Creating setup-db.sql.gz"
+echo "===================================================================="
+
+{
+ mysqldump db -udb -pdb --no-tablespaces --no-data \
+ && \
+ mysqldump db -udb -pdb --no-tablespaces --no-create-info \
+ --ignore-table=db.be_sessions \
+ --ignore-table=db.cache_hash \
+ --ignore-table=db.cache_hash_tags \
+ --ignore-table=db.cache_pages \
+ --ignore-table=db.cache_pages_tags \
+ --ignore-table=db.cache_rootline \
+ --ignore-table=db.cache_rootline_tags \
+ --ignore-table=db.cache_workspaces \
+ --ignore-table=db.cache_workspaces_tags \
+ --ignore-table=db.fe_sessions \
+ --ignore-table=db.sys_history \
+ --ignore-table=db.sys_log \
+ ;
+} \
+| gzip -9 \
+> "setup-db.sql.gz"

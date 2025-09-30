@@ -1,0 +1,32 @@
+name: Continuous Integration Pipeline
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.head_ref || github.workflow }}
+
+env:
+  SEGMENT_DOWNLOAD_TIMEOUT_MINS: 5
+
+jobs:
+  ci:
+    name: Continuous Integration
+    uses: Leuchtfeuer/deployment-runner/.github/workflows/ci.yaml@v3.3
+    with:
+      phpVersion: '8.3'
+      runner: ${{ vars.RUNNER }}
+      anthropicModel: ${{ vars.ANTHROPIC_MODEL }}
+      runPHPCodeStyle: false
+      runPHPStan: false
+      runTypoScriptLinter: true
+      runXliffLinter: false
+      runUnitTests: false
+      runFunctionalTests: false
+    secrets:
+      PRIVATE_KEY: ${{ secrets.JENKINS_PRIVATE_KEY }}
+      PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+      KNOWN_HOSTS: ${{ vars.KNOWN_HOSTS }}
+      KNOWN_HOSTS_COMMON: ${{ vars.KNOWN_HOSTS_COMMON }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}

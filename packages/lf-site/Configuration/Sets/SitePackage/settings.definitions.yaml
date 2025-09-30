@@ -1,0 +1,14 @@
+categories:
+  LfSite:
+    label: 'Site Package'
+  LfSite.pages:
+    label: 'Pages'
+    parent: LfSite
+
+settings:
+  lfSite.pages.footerMeta:
+    label: 'Footer Meta Menu'
+    category: LfSite.pages
+    description: 'ID of the folder or page for the footer meta menu.'
+    type: int
+    default: 1

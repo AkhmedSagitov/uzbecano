@@ -1,0 +1,83 @@
+#!/usr/bin/env bash
+
+## Description: Installs npm dependencies and builds assets in the Build directory
+## Usage: assets
+## Example: ddev assets
+
+show_help() {
+  cat <<EOF
+Usage: ddev assets [options]
+
+Options:
+  -h, --help            Show this help message
+  -n, --no-install      Skip dependency installation
+  -e, --eslint-fix      Fix eslint before build
+  -w, --watch           Enable watch mode
+
+Description:
+  This script builds assets, optionally in watch mode, and can skip installation
+  if dependencies are already present.
+
+Examples:
+  ddev assets
+  ddev assets --no-install
+  ddev assets -n --eslint-fix
+  ddev assets --no-install --watch
+EOF
+}
+
+INSTALL=1
+ESLINT_FIX=0
+WATCH=0
+
+# Parse arguments
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -h|--help)
+      show_help
+      exit 0
+      ;;
+    -n|--no-install)
+      INSTALL=0
+      shift
+      ;;
+    -w|--watch)
+      WATCH=1
+      shift
+      ;;
+    -e|--eslint-fix)
+      ESLINT_FIX=1
+      shift
+      ;;
+    -*)
+      echo "Unknown option: $1"
+      echo "Use --help to see available options."
+      exit 1
+      ;;
+    *)
+      break
+      ;;
+  esac
+done
+
+echo "Running assets script in the Build directory..."
+
+cd Build || exit 1
+
+if [ $INSTALL -eq 1 ]; then
+    echo "Installing npm dependencies..."
+    npm install
+fi
+
+if [ $ESLINT_FIX -eq 1 ]; then
+    echo "Fixing eslint..."
+    npm run eslint:fix
+fi
+
+if [ $WATCH -eq 1 ]; then
+    echo "Running npm run watch..."
+    npm run watch
+else
+    echo "Running npm run build..."
+    npm run build
+fi

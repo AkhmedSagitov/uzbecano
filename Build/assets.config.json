@@ -1,0 +1,18 @@
+{
+	"vite": {
+		"lf-site": {
+			"dist": "../packages/lf-site/Resources/Public/Assets",
+			"inputs": {
+				"website": "assets/css/website.css",
+				"rte": "assets/css/rte.css",
+				"main": "assets/typescript/main.ts"
+			}
+		}
+	},
+	"sprite": {
+		"main": {
+			"inputDir": "assets/icons/sprite",
+			"outputFile": "../packages/lf-site/Resources/Public/Icons/Sprite.svg"
+		}
+	}
+}

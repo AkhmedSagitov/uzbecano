@@ -1,0 +1,9 @@
+@import "./website.css";
+
+body {
+  @apply prose max-w-none;
+  @apply prose-lead:font-normal;
+  @apply prose-a:text-primary-500 prose-a:hover:text-primary-600;
+
+  font-family: var(--font-sans);
+}

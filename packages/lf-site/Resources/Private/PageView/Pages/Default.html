@@ -1,0 +1,22 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:layout name="Default"/>
+
+<f:section name="Main">
+    <main>
+        <div class="min-h-96 flex items-center justify-center p-8 bg-primary-500">
+            <div class="prose prose-invert max-w-none text-center">
+                <h1>Leuchtfeuer Kickstarter</h1>
+                <p class="lead">Welcome to Leuchtfeuer Kickstarter</p>
+            </div>
+        </div>
+        <f:for each="{content.main.records}" as="contentElement">
+            <f:cObject
+                typoscriptObjectPath="{contentElement.mainType}"
+                data="{contentElement.rawRecord}"
+                table="{contentElement.mainType}"
+            />
+        </f:for>
+    </main>
+</f:section>

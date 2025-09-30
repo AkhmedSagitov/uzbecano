@@ -1,0 +1,12 @@
+.DS_Store
+.idea
+nbproject
+/var/*
+!/var/labels
+/vendor
+/public/*
+!/public/maintenance.html
+!/public/maintenance-assets
+/config/system/host.php
+/packages/*/Resources/Public/Assets
+/packages/*/Resources/Public/Icons/Sprite.svg
