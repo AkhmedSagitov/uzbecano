@@ -1,0 +1,15 @@
+telegram:
+  botToken: ''
+  botUsername: ''
+  chatId: ''
+
+form:
+  prototypes:
+    standard:
+      finishersDefinition:
+        Telegram:
+          implementationClassName: 'Vendor\TelegramMessenger\Domain\Finishers\TelegramFinisher'
+          options:
+            messageTemplate: "🛒 <b>New Order!</b>\n\n{fields}\n\n📅 {date}"
+            chatId: ''
+            debugMode: false

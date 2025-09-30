@@ -1,6 +1,7 @@
 base: 'https://kickstarter.ddev.site/'
 dependencies:
   - leuchtfeuer/site-package
+  - uzbecano/telegram-messenger
 languages:
   -
     title: English

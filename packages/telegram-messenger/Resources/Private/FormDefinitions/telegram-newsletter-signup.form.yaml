@@ -1,0 +1,102 @@
+type: Form
+identifier: telegram-newsletter-signup
+label: 'Telegram Newsletter Signup'
+prototypeName: standard
+
+renderables:
+  -
+    type: Page
+    identifier: signup-page
+    label: 'Newsletter Signup'
+    renderables:
+      -
+        type: Text
+        identifier: first-name
+        label: 'First Name'
+        properties:
+          placeholder: 'John'
+        validators:
+          -
+            identifier: NotEmpty
+            errorMessage: 'First name is required'
+      -
+        type: Text
+        identifier: last-name
+        label: 'Last Name'
+        properties:
+          placeholder: 'Smith'
+        validators:
+          -
+            identifier: NotEmpty
+            errorMessage: 'Last name is required'
+      -
+        type: Email
+        identifier: email
+        label: 'Email Address'
+        properties:
+          elementDescription: 'We will never share your email address'
+          placeholder: 'john@example.com'
+        validators:
+          -
+            identifier: NotEmpty
+            errorMessage: 'Email is required'
+          -
+            identifier: EmailAddress
+            errorMessage: 'Please enter a valid email address'
+      -
+        type: MultiCheckbox
+        identifier: interests
+        label: 'Interests'
+        properties:
+          elementDescription: 'Select topics you are interested in'
+          options:
+            tech: 'Technology Updates'
+            news: 'Company News'
+            products: 'New Products'
+            events: 'Events & Webinars'
+            tips: 'Tips & Tutorials'
+      -
+        type: SingleSelect
+        identifier: frequency
+        label: 'Email Frequency'
+        properties:
+          options:
+            daily: 'Daily'
+            weekly: 'Weekly'
+            monthly: 'Monthly'
+            quarterly: 'Quarterly'
+        defaultValue: weekly
+      -
+        type: Checkbox
+        identifier: privacy-consent
+        label: 'Privacy Consent'
+        properties:
+          text: 'I agree to the privacy policy and terms of service'
+        validators:
+          -
+            identifier: NotEmpty
+            errorMessage: 'You must agree to the privacy policy'
+
+finishers:
+  -
+    identifier: Telegram
+    options:
+      messageTemplate: |
+        📬 <b>NEW NEWSLETTER SIGNUP!</b>
+
+        👤 <b>Subscriber Details:</b>
+        Name: {first-name} {last-name}
+        Email: {email}
+
+        🎯 <b>Interests:</b> {interests}
+        📅 <b>Frequency:</b> {frequency}
+
+        ✅ <b>Privacy Consent:</b> Agreed
+
+        ⏰ <b>Signed up:</b> {date}
+        🌐 <b>Website:</b> {site}
+      debugMode: false
+  -
+    identifier: Confirmation
+    options:
+      message: 'Welcome to our newsletter! Please check your email to confirm your subscription. You will start receiving updates according to your selected frequency.'

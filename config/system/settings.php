@@ -108,6 +108,7 @@ return [
         'sitename' => 'Kickstarter',
         'systemMaintainers' => [
             1,
+            5,
         ],
         'trustedHostsPattern' => '.*',
     ],

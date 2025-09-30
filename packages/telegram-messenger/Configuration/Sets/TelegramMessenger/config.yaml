@@ -1,0 +1,4 @@
+name: uzbecano/telegram-messenger
+label: Telegram Messenger
+dependencies:
+  - typo3/form

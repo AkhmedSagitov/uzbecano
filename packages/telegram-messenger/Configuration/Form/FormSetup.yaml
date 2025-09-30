@@ -1,0 +1,15 @@
+persistenceManager:
+  allowSaveToExtensionPaths: true
+  allowDeleteFromExtensionPaths: false
+  allowedExtensionPaths:
+    20: EXT:telegram_messenger/Resources/Private/FormDefinitions/
+
+prototypes:
+  standard:
+    finishersDefinition:
+      Telegram:
+        implementationClassName: 'Uzbecano\TelegramMessenger\Domain\Finishers\TelegramFinisher'
+        options:
+          messageTemplate: "🛒 <b>New {formTitle} Submission!</b>\n\n{fields}\n\n📅 <i>Submitted: {date}</i>\n🌐 <i>From: {site}</i>"
+          chatId: ''
+          debugMode: false
