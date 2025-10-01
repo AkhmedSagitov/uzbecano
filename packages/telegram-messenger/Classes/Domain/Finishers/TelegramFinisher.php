@@ -12,6 +12,9 @@ class TelegramFinisher extends AbstractFinisher
 {
     protected $shortFinisherIdentifier = 'Telegram';
 
+    /**
+     * @throws \Exception
+     */
     protected function executeInternal(): void
     {
         $formValues = $this->getFormValues();

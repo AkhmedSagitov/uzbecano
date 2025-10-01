@@ -107,35 +107,4 @@ class TelegramService implements SingletonInterface
         return $message;
     }
 
-    public function testConnection(): array
-    {
-        try {
-            $this->initializeTelegram();
-            $result = Request::getMe();
-
-            if ($result->isOk()) {
-                $botInfo = $result->getResult();
-                return [
-                    'success' => true,
-                    'message' => 'Connection successful',
-                    'bot_info' => [
-                        'username' => $botInfo->getUsername(),
-                        'first_name' => $botInfo->getFirstName(),
-                        'id' => $botInfo->getId()
-                    ]
-                ];
-            }
-
-            return [
-                'success' => false,
-                'message' => 'Connection failed: ' . $result->getDescription()
-            ];
-
-        } catch (\Exception $e) {
-            return [
-                'success' => false,
-                'message' => 'Error: ' . $e->getMessage()
-            ];
-        }
-    }
 }
