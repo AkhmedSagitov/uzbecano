@@ -1,3 +1,0 @@
-use_default_excluded_tables: true
-connection: Default
-excluded_tables:

@@ -1,16 +1,94 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
       data-namespace-typo3-fluid="true">
 
-<footer class="py-6 bg-white border-t border-t-neutral-200">
-    <div class="container mx-auto px-6">
-        <ul class="flex gap-6 flex-wrap">
-            <f:for each="{footerMetaMenu}" as="page">
-                <li>
-                    <f:link.page pageUid="{page.data.uid}" class="text-sm text-neutral-500 transition-colors hover:text-primary-500 focus-visible:text-primary-500">
-                        {page.title}
-                    </f:link.page>
-                </li>
-            </f:for>
-        </ul>
+<footer class="bg-gradient-to-b from-gray-900 to-indigo-950 text-amber-50 border-t border-amber-500/40">
+    <div class="container mx-auto px-6 py-12">
+        <!-- Main Footer Content -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+            <!-- Brand Section -->
+            <div class="lg:col-span-2">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="text-4xl">🍸</span>
+                    <h3 class="text-2xl font-bold text-amber-400">Cocktail Lounge</h3>
+                </div>
+                <p class="text-amber-100 mb-4 max-w-md">
+                    Experience the finest handcrafted cocktails in an elegant atmosphere.
+                    Where every drink tells a story and every moment is memorable.
+                </p>
+                <div class="flex items-center gap-4 text-sm">
+                    <span class="flex items-center gap-2">
+                        <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                        <span class="text-amber-300">Open Daily</span>
+                    </span>
+                    <span class="text-amber-200">5:00 PM - 2:00 AM</span>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div>
+                <h4 class="font-bold text-amber-400 mb-4">Contact</h4>
+                <div class="space-y-2 text-sm text-amber-100">
+                    <p class="flex items-center gap-2">
+                        <span>📍</span>
+                        123 Cocktail Street, City
+                    </p>
+                    <p class="flex items-center gap-2">
+                        <span>📞</span>
+                        +1 (555) 123-4567
+                    </p>
+                    <p class="flex items-center gap-2">
+                        <span>✉️</span>
+                        info@cocktaillounge.com
+                    </p>
+                </div>
+            </div>
+
+            <!-- Social & Hours -->
+            <div>
+                <h4 class="font-bold text-amber-400 mb-4">Follow Us</h4>
+                <div class="flex gap-3 mb-6">
+                    <a href="#" class="w-10 h-10 bg-amber-600/30 hover:bg-amber-500/50 rounded-full flex items-center justify-center transition-all duration-300 hover:transform hover:scale-110">
+                        <span class="text-amber-300">📷</span>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-amber-600/30 hover:bg-amber-500/50 rounded-full flex items-center justify-center transition-all duration-300 hover:transform hover:scale-110">
+                        <span class="text-amber-300">🐦</span>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-amber-600/30 hover:bg-amber-500/50 rounded-full flex items-center justify-center transition-all duration-300 hover:transform hover:scale-110">
+                        <span class="text-amber-300">📱</span>
+                    </a>
+                </div>
+                <div class="text-xs text-amber-300">
+                    <p class="font-semibold mb-1">Happy Hour</p>
+                    <p class="text-amber-200/70">Mon-Fri: 5:00 PM - 7:00 PM</p>
+                    <p class="text-amber-200">50% off premium cocktails</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="border-t border-amber-500/40 pt-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <!-- Footer Menu -->
+                <ul class="flex gap-6 flex-wrap justify-center md:justify-start">
+                    <f:for each="{footerMetaMenu}" as="page">
+                        <li>
+                            <f:link.page pageUid="{page.data.uid}" class="text-sm text-amber-200/70 hover:text-amber-300 transition-colors duration-300">
+                                {page.title}
+                            </f:link.page>
+                        </li>
+                    </f:for>
+                </ul>
+
+                <!-- Copyright -->
+                <div class="text-center md:text-right">
+                    <p class="text-xs text-amber-200/60">
+                        &copy; 2024 Cocktail Lounge. All rights reserved.
+                    </p>
+                    <p class="text-xs text-amber-300 mt-1">
+                        Crafted with <span class="text-red-400">♥</span> for cocktail lovers
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 </footer>

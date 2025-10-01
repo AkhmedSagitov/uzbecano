@@ -1,5 +1,0 @@
-includes:
-  - ../../../vendor/leuchtfeuer/ci-config/phpstan/default.neon
-
-parameters:
-  level: 9

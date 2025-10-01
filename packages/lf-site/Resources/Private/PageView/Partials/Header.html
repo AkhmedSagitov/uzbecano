@@ -1,9 +1,22 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
       data-namespace-typo3-fluid="true">
 
-<header class="py-6 bg-white">
+<header class="py-4 bg-gradient-to-b from-gray-900 to-indigo-950 border-t border-amber-500/40">
     <div class="container mx-auto px-6 flex items-center justify-between gap-8">
-        <f:link.page pageUid="{site.rootPageId}" class="font-bold text-xl uppercase">Kickstarter</f:link.page>
-        <f:render partial="Header/Navigation" arguments="{_all}"/>
+        <f:link.page pageUid="{site.rootPageId}" class="font-bold text-2xl text-amber-400 hover:text-amber-300 transition-colors duration-300 uppercase tracking-wider">
+            <span class="flex items-center gap-3">
+                <span class="text-3xl">🍸</span>
+                Cocktail Lounge
+            </span>
+        </f:link.page>
+        <div class="lg:flex items-center gap-8 text-amber-50">
+            <div class="flex items-center gap-4 text-amber-100 text-sm">
+                <span class="flex items-center gap-2">
+                    <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                    Open Now
+                </span>
+                <span class="border-l border-amber-500/60 pl-4 text-amber-200">Happy Hour: 5-7 PM</span>
+            </div>
+        </div>
     </div>
 </header>

@@ -10,14 +10,6 @@ switch (Environment::getContext()) {
         $contextConfiguration = Environment::getProjectPath() . '/config/system/environments/development.php';
         break;
 
-    case 'Testing':
-        $contextConfiguration = Environment::getProjectPath() . '/config/system/environments/testing.php';
-        break;
-
-    case 'Production/Staging':
-        $contextConfiguration = Environment::getProjectPath() . '/config/system/environments/staging.php';
-        break;
-
     case 'Production':
         $contextConfiguration = Environment::getProjectPath() . '/config/system/environments/production.php';
         break;
