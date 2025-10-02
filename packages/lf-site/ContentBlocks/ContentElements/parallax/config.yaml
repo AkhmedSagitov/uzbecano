@@ -1,0 +1,27 @@
+name: uzbecano/parallax
+typeName: uzbecano_parallax
+group: default
+prefixFields: true
+prefixType: full
+basics:
+  - TYPO3/Appearance
+
+fields:
+  - identifier: palette_1
+    type: Palette
+    fields:
+      - identifier: header
+        useExistingField: true
+      - identifier: header_layout
+        useExistingField: true
+      - identifier: header_position
+        useExistingField: true
+
+  - identifier: subheader
+    useExistingField: true
+
+  - identifier: image
+    useExistingField: true
+    minitems: 1
+    maxitems: 1
+    allowed: jpg,jpeg,png

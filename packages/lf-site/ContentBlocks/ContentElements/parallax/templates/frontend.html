@@ -1,0 +1,36 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:layout/>
+
+<f:section name="Header"/>
+
+<f:section name="Main">
+    <div class="flex justify-center items-center">
+        <f:if condition="{data.image -> f:count()} > 0">
+            <div data-parallax class="bg-fixed bg-cover bg-center bg-no-repeat w-full {f:if(condition: data.layout, then: 'h-96', else: 'h-lvh')}" style="background-image: url('{f:uri.image(image: data.image.0)}')"></div>
+        </f:if>
+        <f:if condition="{data.header} && {data.header_layout} !== 100 && {data.image.0}">
+            <div class="absolute text-white bg-red-600 mx-8 px-4 py-2 md:py-6 md:px-12 text-center uppercase transition-all duration-200" data-parallax-text>
+                <f:switch expression="{data.header_layout}">
+                    <f:case value="0">
+                        <h1 class="text-3xl md:text-4xl xl:text-6xl font-bold mb-2">{data.header}</h1>
+                    </f:case>
+                    <f:case value="1">
+                        <h2 class="text-3xl md:text-4xl xl:text-6xl font-bold mb-2">{data.header}</h2>
+                    </f:case>
+                    <f:case value="2">
+                        <h3 class="text-3xl md:text-4xl xl:text-6xl font-bold mb-2">{data.header}</h3>
+                    </f:case>
+                </f:switch>
+                <p class="md:text-2xl xl:text-3xl">{data.subheader}</p>
+            </div>
+        </f:if>
+    </div>
+</f:section>
+
+
+
+
+
+
+

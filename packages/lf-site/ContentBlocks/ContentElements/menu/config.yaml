@@ -1,0 +1,59 @@
+name: uzbecano/menu
+typeName: uzbecano_menu
+group: default
+prefixFields: true
+prefixType: full
+fields:
+  - identifier: palette_1
+    type: Palette
+    fields:
+      - identifier: header
+        useExistingField: true
+      - identifier: header_layout
+        useExistingField: true
+      - identifier: header_position
+        useExistingField: true
+
+  - identifier: palette_2
+    type: Palette
+    fields:
+      - identifier: select_grid
+        type: Select
+        label: "Mode:"
+        renderType: selectSingle
+        items:
+          - label: 'One text containers per row'
+            value: 12
+          - label: 'Two text containers per row'
+            value: 2
+          - label: 'Three text containers per row'
+            value: 3
+      - identifier: select_button
+        type: Select
+        label: "Button Mode:"
+        renderType: selectSingle
+        items:
+          - label: 'Primary'
+            value: 1
+          - label: 'Secondary'
+            value: 2
+
+  - identifier: items
+    type: Collection
+    label: "Items:"
+    fields:
+      - identifier: image
+        type: File
+        label: "Image:"
+        required: true
+
+      - identifier: title
+        type: Text
+        label: "Title:"
+        required: true
+
+      - identifier: textarea
+        type: Textarea
+        label: "Text:"
+        required: true
+        enableRichtext: true

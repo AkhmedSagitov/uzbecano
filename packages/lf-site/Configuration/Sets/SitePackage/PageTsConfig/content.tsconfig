@@ -1,0 +1,85 @@
+TCEFORM {
+    leuchtfeuer_shortreferences_items {
+        sys_language_uid.disabled = 1
+    }
+  tt_content {
+
+     frame_class {
+        disabled = 1
+     }
+     sectionIndex {
+        disabled = 1
+    }
+    linkToTop {
+       disabled = 1
+    }
+    layout {
+       disabled = 1
+    }
+     layout {
+            types {
+                uzbecano_parallax {
+                    altLabels {
+                        0 = Full
+                        1 = Fixed size
+                    }
+                    removeItems = 2,3
+                    disabled = 0
+                }
+                textmedia {
+                   altLabels {
+                      1 = Center
+                   }
+                   removeItems = 2,3
+                   disabled = 0
+                }
+            }
+        }
+        header_layout {
+            types {
+                form_formframework {
+                    altLabels {
+                        2 = h2
+                        3 = h3
+                    }
+                    removeItems = 0,1,4,5
+                }
+                uzbecano_parallax {
+                    altLabels {
+                        2 = h2
+                        3 = h3
+                    }
+                    removeItems = 0,1,4,5
+                }
+                textmedia {
+                    altLabels {
+                        2 = h2
+                        3 = h3
+                    }
+                    removeItems = 0,1,4,5
+                }
+            }
+        }
+
+       space_before_class {
+          keepItems =
+          addItems.1 = Default
+          addItems.0 = None
+       }
+       space_after_class {
+         keepItems =
+         addItems.1 = Default
+         addItems.0 = None
+       }
+
+       date.types.textmedia.disabled = 1
+       header_position.removeItems = left
+       imagewidth.types.textmedia.disabled = 1
+       imageheight.types.textmedia.disabled = 1
+       imagecols.types.textmedia.disabled = 1
+       imageorient.types.textmedia.removeItems = 1,2,8,9,10,17,18
+       CType.removeItems = text, textpic, header, image
+       tx_lfsite_background_color.types.news_pi1.disabled = 1
+    }
+}
+

@@ -5,12 +5,6 @@
 
 <f:section name="Main">
     <main>
-        <div class="min-h-96 flex items-center justify-center p-8 bg-primary-500">
-            <div class="prose prose-invert max-w-none text-center">
-                <h1>Leuchtfeuer Kickstarter</h1>
-                <p class="lead">Welcome to Leuchtfeuer Kickstarter</p>
-            </div>
-        </div>
         <f:for each="{content.main.records}" as="contentElement">
             <f:cObject
                 typoscriptObjectPath="{contentElement.mainType}"

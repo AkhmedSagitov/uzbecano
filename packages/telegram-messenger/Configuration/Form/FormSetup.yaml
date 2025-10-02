@@ -6,6 +6,13 @@ persistenceManager:
 
 prototypes:
   standard:
+    formElementsDefinition:
+      Form:
+        renderingOptions:
+          templateRootPaths:
+            10: 'EXT:telegram_messenger/Resources/Private/Templates/Extensions/Forms/'
+          partialRootPaths:
+            10: 'EXT:telegram_messenger/Resources/Private/Partials/Extensions/Forms/'
     finishersDefinition:
       Telegram:
         implementationClassName: 'Uzbecano\TelegramMessenger\Domain\Finishers\TelegramFinisher'

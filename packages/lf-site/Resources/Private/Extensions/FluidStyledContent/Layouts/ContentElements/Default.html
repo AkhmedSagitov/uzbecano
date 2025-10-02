@@ -1,0 +1,42 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:if condition="{data.frame_class} != none">
+        <f:then>
+            <f:variable name="additionalClasses" value="{f:if(condition: data.space_before_class, then: 'mt-5')} {f:if(condition: data.space_after_class, then: 'mb-5')} {f:if(condition: '{data.colPos} == 0', then: ' {data.tx_lfsite_background_color}')} {f:if(condition: '({data.tx_lfsite_background_color} == bg-orange-color || {data.tx_lfsite_background_color} == bg-black-color) && {data.colPos} == 0', then: ' group/contentelement is-dark text-white')}" />
+
+            <div id="c{data.uid}" class="frame frame-{data.frame_class} {additionalClasses} frame-type-{data.CType} frame-layout-{data.layout}">
+                <f:if condition="{data._LOCALIZED_UID}">
+                    <a id="c{data._LOCALIZED_UID}"></a>
+                </f:if>
+                <f:if condition="{data.header}">
+                    <div class="container ">
+                        <div class="{f:if(condition: '{data.CType} == form_formframework', then: ' md:w-4/6 mx-auto')}">
+                            <f:render section="Header" optional="true">
+                                <f:render partial="Header/All" arguments="{_all}" />
+                            </f:render>
+                        </div>
+                    </div>
+                </f:if>
+                <f:render section="Main" optional="true" />
+            </div>
+        </f:then>
+        <f:else>
+            <a id="c{data.uid}"></a>
+            <f:if condition="{data._LOCALIZED_UID}">
+                <a id="c{data._LOCALIZED_UID}"></a>
+            </f:if>
+            <f:if condition="{data.space_before_class}">
+                <div class="frame-space-before-{data.space_before_class}"></div>
+            </f:if>
+
+            <f:render section="Header" optional="true">
+                <f:render partial="Header/All" arguments="{_all}" />
+            </f:render>
+            <f:render section="Main" optional="true" />
+
+            <f:if condition="{data.space_after_class}">
+                <div class="frame-space-after-{data.space_after_class}"></div>
+            </f:if>
+
+        </f:else>
+    </f:if>
+</html>

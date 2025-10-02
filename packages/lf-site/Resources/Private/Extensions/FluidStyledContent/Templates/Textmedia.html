@@ -1,44 +1,57 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:layout name="Default" />
-<f:section name="Header">
 
-    <f:if condition="{gallery.position.noWrap} != 1">
-        <div class="prose max-w-none">
-            <f:render partial="Header/All" arguments="{_all}" />
-        </div>
-    </f:if>
+<f:section name="Header"/>
 
-</f:section>
 <f:section name="Main">
 
-    <div class="container mx-auto px-6 ce-textpic ce-{gallery.position.horizontal} ce-{gallery.position.vertical}{f:if(condition: gallery.position.noWrap, then: ' ce-nowrap')} grid {f:if(condition: '{gallery.position.noWrap} && {gallery.position.vertical} == intext', then: ' lg:grid-cols-2')} gap-8">
-        <f:if condition="{gallery.position.vertical} != 'below'">
-            <f:render partial="Media/Gallery" arguments="{_all}" />
-        </f:if>
+    <div class="container py-4">
+        <div class="ce-textpic {f:if(condition: gallery.position.noWrap, then: ' ce-nowrap')}  {f:if(condition: '{data.imageorient} !=0 && {gallery.count.files} > 0', then: ' grid lg:grid-cols-2 lg:gap-8')} {f:if(condition: '{data.layout} == 1', then: ' md:mx-auto md:w-1/2 text-center')}">
 
-        <f:if condition="{data.bodytext}">
-            <f:then>
-                <div class="ce-bodytext prose max-w-none">
-                    <f:if condition="{gallery.position.noWrap}">
-                        <f:render partial="Header/All" arguments="{_all}" />
-                    </f:if>
-                    <f:format.html>{data.bodytext}</f:format.html>
+            <f:if condition="{data.imageorient} == 0">
+                <div class="mb-[24px]">
+                    <f:render partial="Media/Gallery" arguments="{_all}" />
                 </div>
-            </f:then>
-            <f:else>
-                <f:if condition="{gallery.position.noWrap}">
-                    <f:if condition="{data.header}">
-                        <div class="ce-bodytext prose max-w-none">
-                            <f:render partial="Header/All" arguments="{_all}" />
-                        </div>
-                    </f:if>
-                </f:if>
-            </f:else>
-        </f:if>
+            </f:if>
 
-        <f:if condition="{gallery.position.vertical} == 'below'">
-            <f:render partial="Media/Gallery" arguments="{_all}" />
-        </f:if>
+            <f:if condition="{data.imageorient} == 26">
+                <div class="mb-[24px]">
+                    <f:render partial="Media/Gallery" arguments="{_all}" />
+                </div>
+            </f:if>
+
+            <f:if condition="{gallery.position.noWrap} != 1">
+                <f:render partial="Header/All" arguments="{_all}" />
+            </f:if>
+
+            <f:if condition="{data.bodytext}">
+                <f:then>
+                    <div class="ce-bodytext mb-4">
+                        <f:if condition="{gallery.position.noWrap}">
+                            <f:render partial="Header/All" arguments="{_all}" />
+                        </f:if>
+                        <div>
+                            <f:format.html >{data.bodytext}</f:format.html>
+                        </div>
+                    </div>
+                </f:then>
+                <f:else>
+                    <f:if condition="{gallery.position.noWrap}">
+                        <f:if condition="{data.header}">
+                            <div>
+                                <f:render partial="Header/All" arguments="{_all}" />
+                            </div>
+                        </f:if>
+                    </f:if>
+                </f:else>
+            </f:if>
+
+            <f:if condition="{data.imageorient} == 25">
+                <div class="mb-[24px]">
+                    <f:render partial="Media/Gallery" arguments="{_all}" />
+                </div>
+            </f:if>
+        </div>
     </div>
 
 </f:section>

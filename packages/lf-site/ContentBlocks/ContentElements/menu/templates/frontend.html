@@ -1,0 +1,94 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:lfSite="http://typo3.org/ns/Leuchtfeuer/LfSite/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:layout/>
+
+<f:section name="Header"/>
+
+<f:section name="Main">
+
+    <div class="container py-4">
+
+        <div class="grid grid-cols-12">
+            <div class="col-span-12 {f:if(condition: '{data.select_grid} == 12', then: 'lg:col-start-2 lg:col-end-12')}">
+                <f:render partial="Header/Header" arguments="{
+                header: data.header,
+                layout: data.header_layout,
+                positionClass: '{f:if(condition: data.header_position, then: \'ce-headline-{data.header_position}\')}',
+                link: data.header_link,
+                default: settings.defaultHeaderType,
+                headerColor: headerColor,
+                subheaderColor: subheaderColor}"
+
+                />
+
+                <div class="grid grid-cols-1 {f:if(condition: '{data.select_grid} != 12', then: 'lg:grid-cols-{data.select_grid}')} gap-8 grid-flow-row">
+
+                    <f:for each="{data.items}" as="item">
+
+                        <f:if condition="{item.textarea} || {item.url.url}">
+
+                            <div class="relative prose md:prose-medium group-[.is-dark]/contentelement:prose-invert">
+
+                                <lfSite:icon icon="{item.select_icon}"
+                                             class="absolute left-0 w-12 h-12 shrink-0 fill-red group-[.is-dark]/contentelement:fill-white bg-contain bg-no-repeat top-0 {f:if(condition: '{data.select_grid} > 10', then: 'lg:w-24 lg:h-24')} "
+                                             src="EXT:lf_site/Resources/Public/Icons/ContentSelect.svg"/>
+
+                                <div class="pl-16 {f:if(condition: '{data.select_grid} > 10', then: 'lg:pl-28')}">
+                                    <f:if condition="{item.select_icon}">
+                                        <p class="text-xl lg:text-2xl font-normal uppercase text-start hyphens-auto hyphenate-limit min-h-12 mb-0">
+                                            {item.title}
+                                        </p>
+                                    </f:if>
+
+                                    <f:if condition="{item.textarea}">
+                                        <div class="text-start mt-2 sm:mt-0 lg:mt-2"><f:format.html >{item.textarea}</f:format.html></div>
+                                    </f:if>
+
+                                    <f:if condition="{item.url.url}">
+                                        <f:if condition="{item.link-text}">
+                                            <f:then>
+
+                                                <f:if condition="{data.select_button} === '1'">
+                                                    <f:then>
+                                                        <f:link.typolink
+                                                            parameter="{item.url}"
+                                                            class="no-underline mt-4 rounded-md font-semibold  bg-transparent-red-overlay hover:bg-transparent-red text-white px-8 py-1 inline-block text-center {f:if(condition: '{data.tx_lfsite_background_color} == bg-orange-color', then: ' bg-white force-media-orange hover:!bg-transparent-white')}">{item.link-text}</f:link.typolink>
+
+                                                    </f:then>
+                                                    <f:else>
+                                                        <f:link.typolink
+                                                            parameter="{item.url}"
+                                                            class="no-underline border border-red-600 hover:border-red-400 hover:text-red-400 rounded-md mt-4 font-semibold  px-8 py-1 inline-block text-center !text-orange {f:if(condition: '{data.tx_lfsite_background_color} == bg-orange-color', then: ' bg-white force-media-orange')}">{item.link-text}</f:link.typolink>
+                                                    </f:else>
+                                                </f:if>
+                                            </f:then>
+                                            <f:else>
+                                                <f:if condition="{data.select_button} === '1'">
+                                                    <f:then>
+                                                        <f:link.typolink
+                                                            parameter="{item.url}"
+                                                            class="no-underline mt-4 rounded-md font-semibold  bg-transparent-red-overlay hover:bg-transparent-red text-white px-8 py-1 inline-block text-center  {f:if(condition: '{data.tx_lfsite_background_color} == bg-orange-color', then: ' bg-white force-media-orange hover:!bg-transparent-white')}"></f:link.typolink>
+
+                                                    </f:then>
+                                                    <f:else>
+                                                        <f:link.typolink
+                                                            parameter="{item.url}"
+                                                            class="no-underline border border-red-600 hover:border-red-400 hover:text-red-400 rounded-md mt-4 font-semibold  px-8 py-1 inline-block text-center !text-orange {f:if(condition: '{data.tx_lfsite_background_color} == bg-orange-color', then: ' bg-white force-media-orange')}"></f:link.typolink>
+                                                    </f:else>
+                                                </f:if>
+                                            </f:else>
+                                        </f:if>
+                                    </f:if>
+                                </div>
+                            </div>
+                        </f:if>
+                    </f:for>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</f:section>

@@ -1,7 +1,8 @@
 @import "@fontsource-variable/roboto/index.css";
-
+@import "glightbox/dist/css/glightbox.css";
 @import "tailwindcss" source("../../../packages");
 @source "../typescript";
+@source "../../../packages/lf-site/ContentBlocks";
 
 @plugin "@tailwindcss/typography";
 
@@ -23,6 +24,22 @@
 }
 
 @layer utilities {
+  .container {
+    margin-inline: auto;
+  }
+
+  .ce-headline-left {
+    text-align: left;
+  }
+
+  .ce-headline-center {
+    text-align: center;
+  }
+
+  .ce-headline-right {
+    text-align: right;
+  }
+
   .prose {
     @apply prose-lead:font-normal;
     @apply prose-a:text-primary-500 prose-a:hover:text-primary-600;

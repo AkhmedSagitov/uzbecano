@@ -1,0 +1,24 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <picture>
+        <f:if condition="{data.imageorient} != 0">
+            <f:then>
+                <source media="(min-width: 768px)" srcset="{f:uri.image(image: file, maxWidth: '800')}">
+                <source media="(min-width: 481px)" srcset="{f:uri.image(image: file, maxWidth: '700')}">
+            </f:then>
+            <f:else>
+                <source media="(min-width: 768px)" srcset="{f:uri.image(image: file, maxWidth: '1200')}">
+                <source media="(min-width: 481px)" srcset="{f:uri.image(image: file, maxWidth: '700')}">
+            </f:else>
+        </f:if>
+        <f:image
+            class="image-embed-item h-full w-auto"
+            image="{file}"
+            alt="{file.alternative}"
+            title="{file.title}"
+            loading="{settings.media.lazyLoading}"
+            decoding="{settings.media.imageDecoding}"
+            maxWidth="500"
+        />
+    </picture>
+
+</html>
