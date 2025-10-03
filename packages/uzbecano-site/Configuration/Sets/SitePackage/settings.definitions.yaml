@@ -1,14 +1,105 @@
-categories:
-  UzbecanoSite:
-    label: 'Site Package'
-  UzbecanoSite.pages:
-    label: 'Pages'
-    parent: UzbecanoSite
-
 settings:
   uzbecanoSite.pages.footerMeta:
     label: 'Footer Meta Menu'
-    category: UzbecanoSite.pages
-    description: 'ID of the folder or page for the footer meta menu.'
     type: int
     default: 1
+
+  uzbecanoSite.header.siteName:
+    label: 'Site Name'
+    type: string
+    default: 'Uzbecano'
+
+  uzbecanoSite.header.openStatus:
+    label: 'Open Status Text'
+    type: string
+    default: 'Open Daily'
+
+  uzbecanoSite.footer.brandTitle:
+    label: 'Brand Title'
+    type: string
+    default: 'Cocktail Lounge'
+
+  uzbecanoSite.footer.brandDescription:
+    label: 'Brand Description'
+    type: text
+    default: 'Experience the finest handcrafted cocktails in an elegant atmosphere. Where every drink tells a story and every moment is memorable.'
+
+  uzbecanoSite.footer.openStatusText:
+    label: 'Open Status Text'
+    type: string
+    default: 'Open Daily'
+
+  uzbecanoSite.footer.openHours:
+    label: 'Opening Hours'
+    type: string
+    default: '5:00 PM - 2:00 AM'
+
+  uzbecanoSite.footer.contactTitle:
+    label: 'Contact Section Title'
+    type: string
+    default: 'Contact'
+
+  uzbecanoSite.footer.address:
+    label: 'Address'
+    type: string
+    default: '123 Cocktail Street, City'
+
+  uzbecanoSite.footer.phone:
+    label: 'Phone Number'
+    type: string
+    default: '+1 (555) 123-4567'
+
+  uzbecanoSite.footer.email:
+    label: 'Email Address'
+    type: string
+    default: 'info@cocktaillounge.com'
+
+  uzbecanoSite.footer.socialTitle:
+    label: 'Social Media Section Title'
+    type: string
+    default: 'Follow Us'
+
+  uzbecanoSite.footer.copyrightYear:
+    label: 'Copyright Year'
+    type: string
+    default: '2024'
+
+  uzbecanoSite.footer.copyrightName:
+    label: 'Copyright Name'
+    type: string
+    default: 'Cocktail Lounge'
+
+  uzbecanoSite.footer.tagline:
+    label: 'Footer Tagline'
+    type: string
+    default: 'Crafted with ♥ for cocktail lovers'
+
+  uzbecanoSite.socialMedia.instagram.url:
+    label: 'Instagram URL'
+    type: string
+    default: 'https://instagram.com/uzbecano'
+
+  uzbecanoSite.socialMedia.instagram.icon:
+    label: 'Instagram Icon'
+    type: string
+    default: 'instagram'
+
+  uzbecanoSite.socialMedia.telegram.url:
+    label: 'Telegram URL'
+    type: string
+    default: 'https://t.me/uzbecano'
+
+  uzbecanoSite.socialMedia.telegram.icon:
+    label: 'Telegram Icon'
+    type: string
+    default: 'telegram'
+
+  uzbecanoSite.socialMedia.facebook.url:
+    label: 'Facebook URL'
+    type: string
+    default: 'https://facebook.com/uzbecano'
+
+  uzbecanoSite.socialMedia.facebook.icon:
+    label: 'Facebook Icon'
+    type: string
+    default: 'facebook'
