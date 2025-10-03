@@ -4,10 +4,10 @@
 		<header/>
 		<body>
 			<trans-unit id="title">
-				<source>uzbecano/parallax</source>
+				<source>Parallax image</source>
 			</trans-unit>
 			<trans-unit id="description">
-				<source>Description for Content Element uzbecano/parallax</source>
+				<source>Create a parallax image</source>
 			</trans-unit>
 		</body>
 	</file>

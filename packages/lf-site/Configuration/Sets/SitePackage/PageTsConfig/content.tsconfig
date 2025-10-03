@@ -44,6 +44,13 @@ TCEFORM {
                     }
                     removeItems = 0,1,4,5
                 }
+                uzbecano_menu {
+                    altLabels {
+                        2 = h2
+                        3 = h3
+                    }
+                    removeItems = 0,1,4,5
+                }
                 uzbecano_parallax {
                     altLabels {
                         2 = h2

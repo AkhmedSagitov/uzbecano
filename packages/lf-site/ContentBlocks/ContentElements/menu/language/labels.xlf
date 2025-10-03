@@ -4,10 +4,10 @@
 		<header/>
 		<body>
 			<trans-unit id="title">
-				<source>uzbecano/menu</source>
+				<source>Menu</source>
 			</trans-unit>
 			<trans-unit id="description">
-				<source>Description for Content Element uzbecano/menu</source>
+				<source>The list of menu items</source>
 			</trans-unit>
 		</body>
 	</file>

@@ -10,7 +10,7 @@
             <div data-parallax class="bg-fixed bg-cover bg-center bg-no-repeat w-full {f:if(condition: data.layout, then: 'h-96', else: 'h-lvh')}" style="background-image: url('{f:uri.image(image: data.image.0)}')"></div>
         </f:if>
         <f:if condition="{data.header} && {data.header_layout} !== 100 && {data.image.0}">
-            <div class="absolute text-white bg-red-600 mx-8 px-4 py-2 md:py-6 md:px-12 text-center uppercase transition-all duration-200" data-parallax-text>
+            <div class="absolute text-white bg-black/50  right-0 w-1/2 my-8 py-2 md:py-6 md:px-12 text-center uppercase transition-all duration-200" data-parallax-text>
                 <f:switch expression="{data.header_layout}">
                     <f:case value="0">
                         <h1 class="text-3xl md:text-4xl xl:text-6xl font-bold mb-2">{data.header}</h1>

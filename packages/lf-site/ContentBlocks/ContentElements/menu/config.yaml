@@ -3,6 +3,8 @@ typeName: uzbecano_menu
 group: default
 prefixFields: true
 prefixType: full
+basics:
+  - TYPO3/Appearance
 fields:
   - identifier: palette_1
     type: Palette
@@ -28,15 +30,6 @@ fields:
             value: 2
           - label: 'Three text containers per row'
             value: 3
-      - identifier: select_button
-        type: Select
-        label: "Button Mode:"
-        renderType: selectSingle
-        items:
-          - label: 'Primary'
-            value: 1
-          - label: 'Secondary'
-            value: 2
 
   - identifier: items
     type: Collection
@@ -52,8 +45,23 @@ fields:
         label: "Title:"
         required: true
 
+      - identifier: price
+        type: Text
+        label: "Price:"
+        required: true
+
       - identifier: textarea
         type: Textarea
         label: "Text:"
         required: true
         enableRichtext: true
+
+      - identifier: sold_out
+        type: Select
+        label: "Sold-out:"
+        renderType: selectSingle
+        items:
+          - label: 'No'
+            value: 1
+          - label: 'Yes'
+            value: 2
