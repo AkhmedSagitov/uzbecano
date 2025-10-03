@@ -21,82 +21,50 @@ renderables:
             identifier: NotEmpty
             errorMessage: 'Name is required'
       -
-        type: Email
-        identifier: email
-        label: 'Email Address'
-        properties:
-          elementDescription: 'We will respond to this email address'
-          placeholder: 'john@example.com'
-        validators:
-          -
-            identifier: NotEmpty
-            errorMessage: 'Email is required'
-          -
-            identifier: EmailAddress
-            errorMessage: 'Please enter a valid email address'
-      -
         type: Telephone
         identifier: phone
         label: 'Phone Number'
         properties:
-          elementDescription: 'Optional - for urgent matters'
+          elementDescription: 'We will call you back'
           placeholder: '+1234567890'
-      -
-        type: SingleSelect
-        identifier: subject
-        label: 'Subject'
-        properties:
-          options:
-            general: 'General Inquiry'
-            support: 'Technical Support'
-            sales: 'Sales Question'
-            partnership: 'Partnership Opportunity'
-            feedback: 'Feedback or Suggestion'
-            other: 'Other'
         validators:
           -
             identifier: NotEmpty
-            errorMessage: 'Please select a subject'
+            errorMessage: 'Phone number is required'
+          -
+            identifier: RegularExpression
+            options:
+              regularExpression: '/^\+?[0-9]{10,15}$/'
+            errorMessage: 'Please enter a valid phone number (10-15 digits, optional + prefix)'
       -
         type: Textarea
         identifier: message
         label: 'Your Message'
         properties:
-          elementDescription: 'Please describe your inquiry in detail'
-          placeholder: 'Please describe how we can help you...'
-          rows: 6
+          elementDescription: 'Tell us what you need'
+          placeholder: 'Your message...'
+          rows: 3
         validators:
           -
             identifier: NotEmpty
             errorMessage: 'Message is required'
-          -
-            identifier: StringLength
-            options:
-              minimum: 10
-              maximum: 2000
-            errorMessage: 'Message must be between 10 and 2000 characters'
 
 finishers:
   -
     identifier: Telegram
     options:
       messageTemplate: |
-        📧 <b>NEW CONTACT MESSAGE!</b>
+        💬 <b>NEW ORDER</b>
 
-        👤 <b>Contact Details:</b>
-        Name: {name}
-        Email: {email}
-        Phone: {phone}
+        👤 {name}
 
-        📝 <b>Subject:</b> {subject}
+        📱 {phone}
 
-        💬 <b>Message:</b>
         {message}
 
-        ⏰ <b>Submitted:</b> {date}
-        🌐 <b>Website:</b> {site}
+        ⏰ {date}
       debugMode: false
   -
     identifier: Confirmation
     options:
-      message: 'Thank you for contacting us! We have received your message and will get back to you as soon as possible, usually within 24 hours.'
+      message: 'Biz siz bilan böglanamiz!'

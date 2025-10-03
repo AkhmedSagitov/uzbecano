@@ -1,15 +1,31 @@
+
+renderingOptions:
+  submitButtonLabel: Submit
 type: Form
 identifier: telegram-order-form
-label: 'Telegram Order Form'
+label: 'Cocktail Pickup Order'
 prototypeName: standard
-
+finishers:
+  -
+    identifier: Telegram
+    options:
+      messageTemplate: "🍹 NEW COCKTAIL PICKUP ORDER!\n\n👤 Customer:\nName: {customer-name}\nPhone: {customer-phone}\n\n🍸 Order:\n{order-details}\n\n⏰ Time: {date}\n🌐 Website: {site}\n"
+      debugMode: false
+  -
+    options:
+      message: 'Thank you for your order! We will prepare your cocktails and call you when they are ready for pickup.'
+    identifier: Confirmation
 renderables:
   -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
     type: Page
     identifier: order-page
-    label: 'Order Information'
+    label: 'Pickup Information'
     renderables:
       -
+        defaultValue: ''
         type: Text
         identifier: customer-name
         label: 'Your Name'
@@ -21,112 +37,36 @@ renderables:
             identifier: NotEmpty
             errorMessage: 'Name is required'
           -
-            identifier: StringLength
             options:
               minimum: 2
               maximum: 100
+            identifier: StringLength
             errorMessage: 'Name must be between 2 and 100 characters'
       -
-        type: Email
-        identifier: customer-email
-        label: 'Email Address'
-        properties:
-          elementDescription: 'We will send order confirmation here'
-          placeholder: 'john@example.com'
-        validators:
-          -
-            identifier: NotEmpty
-            errorMessage: 'Email is required'
-          -
-            identifier: EmailAddress
-            errorMessage: 'Please enter a valid email address'
-      -
+        defaultValue: ''
         type: Telephone
         identifier: customer-phone
         label: 'Phone Number'
         properties:
-          elementDescription: 'For delivery coordination (optional)'
+          elementDescription: 'We will call you when your order is ready'
           placeholder: '+1234567890'
-      -
-        type: SingleSelect
-        identifier: product
-        label: 'Select Product'
-        properties:
-          options:
-            premium: 'Premium Package - $99'
-            standard: 'Standard Package - $49'
-            basic: 'Basic Package - $29'
-            custom: 'Custom Solution - Contact for Price'
+          fluidAdditionalAttributes:
+            required: required
+            autocomplete: tel
         validators:
           -
             identifier: NotEmpty
-            errorMessage: 'Please select a product'
+            errorMessage: 'Phone number is required'
       -
-        type: Number
-        identifier: quantity
-        label: 'Quantity'
-        defaultValue: 1
-        properties:
-          minimum: 1
-          maximum: 50
-          elementDescription: 'How many items do you need?'
-        validators:
-          -
-            identifier: NotEmpty
-            errorMessage: 'Quantity is required'
-          -
-            identifier: NumberRange
-            options:
-              minimum: 1
-              maximum: 50
-            errorMessage: 'Quantity must be between 1 and 50'
-      -
+        defaultValue: ''
         type: Textarea
-        identifier: special-requests
-        label: 'Special Requests'
+        identifier: order-details
+        label: 'Order Details'
         properties:
-          elementDescription: 'Any special instructions or customization requests'
-          placeholder: 'Please describe any special requirements...'
-          rows: 4
-      -
-        type: Textarea
-        identifier: delivery-address
-        label: 'Delivery Address'
-        properties:
-          elementDescription: 'Full delivery address including postal code'
-          placeholder: '123 Main Street, City, State, 12345, Country'
-          rows: 3
+          elementDescription: 'Tell us what cocktails you would like'
+          placeholder: 'e.g., 2x Mojito, 1x Margarita...'
+          rows: 2
         validators:
           -
             identifier: NotEmpty
-            errorMessage: 'Delivery address is required'
-
-finishers:
-  -
-    identifier: Telegram
-    options:
-      messageTemplate: |
-        🛒 <b>NEW ORDER RECEIVED!</b>
-
-        👤 <b>Customer Details:</b>
-        Name: {customer-name}
-        Email: {customer-email}
-        Phone: {customer-phone}
-
-        📦 <b>Order Details:</b>
-        Product: {product}
-        Quantity: {quantity}
-
-        🏠 <b>Delivery Address:</b>
-        {delivery-address}
-
-        💬 <b>Special Requests:</b>
-        {special-requests}
-
-        ⏰ <b>Order Time:</b> {date}
-        🌐 <b>Website:</b> {site}
-      debugMode: false
-  -
-    identifier: Confirmation
-    options:
-      message: 'Thank you for your order! We have received your request and will contact you soon to confirm the details and arrange delivery. You will receive a confirmation email shortly.'
+            errorMessage: 'Please specify your order'

@@ -15,7 +15,7 @@
                 </f:then>
                 <f:else>
                     <span class="btn-group next submit">
-                        <f:form.button property="__currentPage" value="{form.pages -> f:count()}" class="flex justify-center items-center font-bold text-3xl mt-2 bg-orange text-white h-12 w-full group-[.is-dark]/contentelement:bg-white group-[.is-dark]/contentelement:!text-red-600 ">
+                        <f:form.button property="__currentPage" value="{form.pages -> f:count()}" class="flex justify-center items-center font-bold text-xl rounded-lg mt-4 bg-primary-500 hover:bg-primary-600 active:bg-primary-700 text-white py-4 px-8 w-full transition-colors shadow-md hover:shadow-lg">
                             {formvh:translateElementProperty(element: form, renderingOptionProperty: 'submitButtonLabel')}
                         </f:form.button>
                     </span>

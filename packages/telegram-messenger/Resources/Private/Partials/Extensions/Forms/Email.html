@@ -1,12 +1,12 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers" data-namespace-typo3-fluid="true">
 <formvh:renderRenderable renderable="{element}">
-    <div class="pt-2 md:pt-4">
+    <div>
         <f:render partial="Field/Field" arguments="{element: element}" contentAs="elementContent">
             <f:form.textfield
                     type="email"
                     property="{element.identifier}"
                     id="{element.uniqueIdentifier}"
-                    class="{element.properties.elementClassAttribute} form-control border border-custom-dark py-2 px-4 mt-2 focus:outline-none w-full"
+                    class="{element.properties.elementClassAttribute} border-2 border-gray-300 rounded-lg py-3 px-4 w-full focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-colors"
                     errorClass="{element.properties.elementErrorClassAttribute}"
                     additionalAttributes="{formvh:translateElementProperty(element: element, property: 'fluidAdditionalAttributes')}"
             />

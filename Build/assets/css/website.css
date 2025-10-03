@@ -14,18 +14,38 @@
 @source inline('grayscale');
 
 @theme {
-  /* Generated with https://www.tints.dev/primary/F24030 */
-  --color-primary-50: #feedec;
-  --color-primary-100: #fcd7d4;
-  --color-primary-200: #fab4ad;
-  --color-primary-300: #f78c82;
-  --color-primary-400: #f5695c;
-  --color-primary-500: #f24030;
-  --color-primary-600: #dd1f0e;
-  --color-primary-700: #a3170a;
-  --color-primary-800: #6e1007;
-  --color-primary-900: #350703;
-  --color-primary-950: #1d0402;
+  /* Cocktail Bar Color Scheme */
+  --color-primary-50: #fef5e7;
+  --color-primary-100: #fde8c7;
+  --color-primary-200: #fcd98b;
+  --color-primary-300: #fac750;
+  --color-primary-400: #f8b524;
+  --color-primary-500: #d4af37;
+  --color-primary-600: #b8941f;
+  --color-primary-700: #9a7e18;
+  --color-primary-800: #7c6513;
+  --color-primary-900: #5e4c0e;
+  --color-primary-950: #3d3109;
+
+  /* Dark browns for backgrounds */
+  --color-amber-50: #1a0f0a;
+  --color-amber-100: #2d1810;
+  --color-amber-200: #d4af37;
+  --color-amber-300: #e6c547;
+  --color-amber-400: #f0d765;
+  --color-amber-500: #ffd700;
+  --color-amber-600: #ffb700;
+
+  /* Text colors */
+  --color-gray-50: #fff5e6;
+  --color-gray-100: #f5e6d3;
+  --color-gray-300: #4a3f35;
+  --color-gray-600: #b8a896;
+  --color-gray-700: #8b7866;
+  --color-gray-900: #1a1410;
+
+  --color-black: #0d0806;
+  --color-white: #fff5e6;
 
   --font-sans: 'Roboto Variable', sans-serif;
 }
@@ -36,8 +56,62 @@
     padding: 0 1rem 0 1rem;
   }
 
-  body {
+  [class*="border"] {
+    border: none !important;
+  }
 
+  body {
+    background-color: #1a0f0a;
+    color: #f5e6d3;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #ffd700;
+  }
+
+  header, footer {
+    color: #f5e6d3 !important;
+  }
+
+  header *, footer * {
+    color: #f5e6d3 !important;
+  }
+
+  header h1, header h2, header h3, header h4, header h5, header h6,
+  footer h1, footer h2, footer h3, footer h4, footer h5, footer h6 {
+    color: #ffd700 !important;
+  }
+
+  header a, footer a {
+    color: #f5e6d3 !important;
+    text-decoration: none;
+  }
+
+  header a:hover, footer a:hover {
+    color: #ffd700 !important;
+  }
+
+  header nav, header nav *,
+  footer nav, footer nav * {
+    color: #f5e6d3 !important;
+  }
+
+  .frame-type-text,
+  .frame-type-textpic,
+  .frame-type-textmedia,
+  .frame-type-image,
+  .frame-type-bullets,
+  .frame-type-table,
+  .frame-type-html,
+  .frame-type-div,
+  .frame-type-shortcut,
+  .frame-type-list,
+  .frame {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.15);
+    background: rgba(45, 24, 16, 0.4);
+    backdrop-filter: blur(8px);
+    border-radius: 8px;
+    padding: 1.5rem;
   }
   .ce-headline-left {
     text-align: left;
