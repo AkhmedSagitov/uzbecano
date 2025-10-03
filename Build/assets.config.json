@@ -1,7 +1,7 @@
 {
 	"vite": {
-		"lf-site": {
-			"dist": "../packages/lf-site/Resources/Public/Assets",
+		"uzbecano-site": {
+			"dist": "../packages/uzbecano-site/Resources/Public/Assets",
 			"inputs": {
 				"website": "assets/css/website.css",
 				"rte": "assets/css/rte.css",
@@ -12,7 +12,7 @@
 	"sprite": {
 		"main": {
 			"inputDir": "assets/icons/sprite",
-			"outputFile": "../packages/lf-site/Resources/Public/Icons/Sprite.svg"
+			"outputFile": "../packages/uzbecano-site/Resources/Public/Icons/Sprite.svg"
 		}
 	}
 }

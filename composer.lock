@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ec6fb487b309f74a089aeaf71cab485d",
+    "content-hash": "a8cdcb20b1cfd1d3b863ea00d566bcb2",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1219,45 +1219,6 @@
                 }
             ],
             "time": "2025-08-23T21:21:41+00:00"
-        },
-        {
-            "name": "leuchtfeuer/lf-site",
-            "version": "13.4.0",
-            "dist": {
-                "type": "path",
-                "url": "./packages/lf-site",
-                "reference": "83b683845031f36f24f2fc7606900f8ae31d9b3d"
-            },
-            "require": {
-                "typo3/cms-core": "^13.4"
-            },
-            "type": "typo3-cms-extension",
-            "extra": {
-                "typo3/cms": {
-                    "extension-key": "lf_site"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Leuchtfeuer\\LfSite\\": "Classes/"
-                }
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Team YD",
-                    "email": "team-yd@Leuchtfeuer.com",
-                    "role": "Developer",
-                    "homepage": "https://www.Leuchtfeuer.com"
-                }
-            ],
-            "description": "Kickstarter - Site Extension",
-            "homepage": "https://www.Leuchtfeuer.com",
-            "transport-options": {
-                "relative": true
-            }
         },
         {
             "name": "lolli42/finediff",
@@ -7274,6 +7235,45 @@
                 }
             ],
             "description": "TYPO3 Extension for Telegram messaging",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "uzbecano/uzbecano-site",
+            "version": "13.4.0",
+            "dist": {
+                "type": "path",
+                "url": "./packages/uzbecano-site",
+                "reference": "8596f9866a0f3a006a6c3461140972b1f7d06451"
+            },
+            "require": {
+                "typo3/cms-core": "^13.4"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "uzbecano_site"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Uzbecano\\UzbecanoSite\\": "Classes/"
+                }
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Uzbecano Team",
+                    "email": "dev@uzbecano.com",
+                    "role": "Developer",
+                    "homepage": "https://uzbecano.com"
+                }
+            ],
+            "description": "Uzbecano - Site Extension",
+            "homepage": "https://uzbecano.com",
             "transport-options": {
                 "relative": true
             }

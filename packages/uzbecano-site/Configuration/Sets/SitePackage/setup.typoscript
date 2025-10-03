@@ -11,7 +11,7 @@ page {
     config {
         headerComment (
 ###################################################
-Leuchtfeuer Digital Marketing - www.Leuchtfeuer.com
+Uzbecano - www.uzbecano.com
 ###################################################
         )
     }
@@ -23,8 +23,8 @@ Leuchtfeuer Digital Marketing - www.Leuchtfeuer.com
     10 = PAGEVIEW
     10 {
         paths {
-            0 = EXT:lf_site/Resources/Private/Common/
-            10 = EXT:lf_site/Resources/Private/PageView/
+            0 = EXT:uzbecano_site/Resources/Private/Common/
+            10 = EXT:uzbecano_site/Resources/Private/PageView/
         }
         dataProcessing {
             10 = page-content

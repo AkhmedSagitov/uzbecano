@@ -96,23 +96,6 @@
     color: #f5e6d3 !important;
   }
 
-  .frame-type-text,
-  .frame-type-textpic,
-  .frame-type-textmedia,
-  .frame-type-image,
-  .frame-type-bullets,
-  .frame-type-table,
-  .frame-type-html,
-  .frame-type-div,
-  .frame-type-shortcut,
-  .frame-type-list,
-  .frame {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.15);
-    background: rgba(45, 24, 16, 0.4);
-    backdrop-filter: blur(8px);
-    border-radius: 8px;
-    padding: 1.5rem;
-  }
   .ce-headline-left {
     text-align: left;
   }
@@ -130,5 +113,18 @@
     @apply prose-a:text-primary-500 prose-a:hover:text-primary-600;
 
     --tw-prose-invert-lead: #fff;
+  }
+
+  /* Form confirmation message styling */
+  #telegram-order-form-6,
+  #telegram-contact-form-6,
+  [id^="telegram-"][id$="-form-6"] {
+    text-align: center !important;
+    color: #f5e6d3 !important;
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+    padding: 2rem 0 !important;
+    margin: 0 auto !important;
+    max-width: 800px !important;
   }
 }

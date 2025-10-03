@@ -10,7 +10,7 @@ editor:
   config:
     contentsCss:
       - 'EXT:rte_ckeditor/Resources/Public/Css/contents.css'
-      - 'EXT:lf_site/Resources/Public/Assets/Css/rte.css'
+      - 'EXT:uzbecano_site/Resources/Public/Assets/Css/rte.css'
 
     importModules:
       - { module: '@ckeditor/ckeditor5-table', exports: [ 'TableCaption', 'PlainTableOutput' ] }

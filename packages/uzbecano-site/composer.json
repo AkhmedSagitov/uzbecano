@@ -1,0 +1,30 @@
+{
+	"name": "uzbecano/uzbecano-site",
+	"description": "Uzbecano - Site Extension",
+	"type": "typo3-cms-extension",
+	"minimum-stability": "stable",
+	"version": "13.4.0",
+	"license": "GPL-2.0-or-later",
+	"homepage": "https://uzbecano.com",
+	"authors": [
+		{
+			"name": "Uzbecano Team",
+			"email": "dev@uzbecano.com",
+			"role": "Developer",
+			"homepage": "https://uzbecano.com"
+		}
+	],
+	"require": {
+		"typo3/cms-core": "^13.4"
+	},
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "uzbecano_site"
+		}
+	},
+	"autoload": {
+		"psr-4": {
+			"Uzbecano\\UzbecanoSite\\": "Classes/"
+		}
+	}
+}

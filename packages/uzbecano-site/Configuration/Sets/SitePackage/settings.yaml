@@ -1,0 +1,5 @@
+styles:
+  templates:
+    templateRootPath: EXT:uzbecano_site/Resources/Private/Extensions/FluidStyledContent/Templates/
+    partialRootPath: EXT:uzbecano_site/Resources/Private/Extensions/FluidStyledContent/Partials/
+    layoutRootPath: EXT:uzbecano_site/Resources/Private/Extensions/FluidStyledContent/Layouts/

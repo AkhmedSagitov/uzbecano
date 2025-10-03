@@ -1,14 +1,14 @@
 categories:
-  LfSite:
+  UzbecanoSite:
     label: 'Site Package'
-  LfSite.pages:
+  UzbecanoSite.pages:
     label: 'Pages'
-    parent: LfSite
+    parent: UzbecanoSite
 
 settings:
-  lfSite.pages.footerMeta:
+  uzbecanoSite.pages.footerMeta:
     label: 'Footer Meta Menu'
-    category: LfSite.pages
+    category: UzbecanoSite.pages
     description: 'ID of the folder or page for the footer meta menu.'
     type: int
     default: 1

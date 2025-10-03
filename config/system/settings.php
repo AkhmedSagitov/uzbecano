@@ -109,6 +109,7 @@ return [
         'systemMaintainers' => [
             1,
             5,
+            4,
         ],
         'trustedHostsPattern' => '.*',
     ],

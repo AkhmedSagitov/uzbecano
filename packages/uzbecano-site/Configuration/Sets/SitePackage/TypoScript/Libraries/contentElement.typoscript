@@ -1,0 +1,5 @@
+lib.contentElement {
+    partialRootPaths {
+        5 = EXT:uzbecano_site/Resources/Private/Common/Partials/
+    }
+}

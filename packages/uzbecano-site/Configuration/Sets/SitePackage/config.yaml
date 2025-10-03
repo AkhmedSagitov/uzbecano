@@ -1,0 +1,4 @@
+name: uzbecano/uzbecano-site
+label: Uzbecano Site Package
+dependencies:
+  - typo3/fluid-styled-content

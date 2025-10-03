@@ -1,6 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers" data-namespace-typo3-fluid="true">
-<div id="{form.identifier}">
-    <div class="container text-center group-[.is-dark]/contentelement:text-white">
+<div class="container">
+    <div id="{form.identifier}" class="text-center text-white text-2xl font-semibold py-8" style="text-align: center; color: #f5e6d3; font-size: 1.5rem; font-weight: 600; padding: 2rem 0;">
         <f:if condition="{isPreparedMessage}">
             <f:then>
                 {message -> f:format.raw()}

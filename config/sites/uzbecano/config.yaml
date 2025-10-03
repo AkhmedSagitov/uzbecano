@@ -1,6 +1,6 @@
-base: 'https://kickstarter.ddev.site/'
+base: 'https://uzbecano.ddev.site/'
 dependencies:
-  - leuchtfeuer/site-package
+  - uzbecano/uzbecano-site
   - uzbecano/telegram-messenger
 languages:
   -

@@ -1,5 +1,0 @@
-styles:
-  templates:
-    templateRootPath: EXT:lf_site/Resources/Private/Extensions/FluidStyledContent/Templates/
-    partialRootPath: EXT:lf_site/Resources/Private/Extensions/FluidStyledContent/Partials/
-    layoutRootPath: EXT:lf_site/Resources/Private/Extensions/FluidStyledContent/Layouts/

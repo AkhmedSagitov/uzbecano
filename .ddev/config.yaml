@@ -1,4 +1,4 @@
-name: kickstarter
+name: uzbecano
 type: typo3
 docroot: public
 php_version: "8.3"
@@ -22,11 +22,7 @@ disable_settings_management: true
 nodejs_version: "24"
 upload_dirs:
     - fileadmin
-web_extra_daemons:
-  - name: "typo3-scheduler"
-    command: "/var/www/html/.ddev/commands/web/typo3-scheduler --cron"
-    directory: /var/www/html
-webimage_extra_packages: [gh]
+
 
 # Key features of DDEV's config.yaml:
 

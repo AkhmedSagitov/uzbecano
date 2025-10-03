@@ -1,8 +1,8 @@
 {
-	"name": "kickstarter-assets",
+	"name": "uzbecano-site-assets",
 	"private": true,
 	"version": "1.0.0",
-	"author": "Team YD <dev@Leuchtfeuer.com>",
+	"author": "Uzbecano Team <dev@uzbecano.com>",
 	"type": "module",
 	"scripts": {
 		"eslint:check": "tsc && npx eslint",
